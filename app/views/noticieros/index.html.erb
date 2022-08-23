@@ -1,0 +1,11 @@
+
+<center> <h1>PERIODICO DE NOTICIAS<h1></center>
+<%= link_to noticieros_path do %>
+    <%= link_to 'Ingresar nueva noticia', new_noticiero_path %>
+        <% @noticieros.each do |noticia| %>
+        <%= link_to noticiero_path(noticia.id) do %>
+            <h2><%= noticia.title %></h2>
+            <%= noticia.image %>
+        <% end %>
+    <% end %>
+<% end %>

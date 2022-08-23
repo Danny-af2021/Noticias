@@ -1,0 +1,35 @@
+<h1>Ingresa nueva noticia</h1>
+
+<%= form_with model: @noticiero do |form| %>
+    <% @noticiero.errors.full_messages.each do |error| %>
+        <div>
+            <%= error %>
+        </div>
+    <% end %>
+
+    <table class="table">
+    <thead>
+        <tr>
+            <th scope="col">
+                <%= form.label :title %>
+                <%= form.text_field :title %></th>
+            <th scope="col">
+                <%= form.label :image %>
+                <%= form.file_field :image %>
+            </th>
+            <th scope="col">
+                <%= form.label :content %>
+                <%= form.text_area :content %>
+            </th>
+            <th scope="col">
+                <%= form.label :category %>
+                <%= form.text_field :category %>
+            </th>
+        </tr>
+    </thead>
+    </table>
+
+    <%= form.submit %>
+
+
+<% end %>
